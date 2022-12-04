@@ -7,30 +7,16 @@ const ingredients = [
   'Condiments',
 ];
 
-const firstIngredientEl = document.createElement("li")
-firstIngredientEl.textContent = ingredients[0];
+const ingredientsEl = document.querySelector("#ingredients");
 
-const secondIngredientEl = document.createElement("li")
-secondIngredientEl.textContent = ingredients[1];
+const items = [];
 
-const thirdIngredientEl = document.createElement("li")
-thirdIngredientEl.textContent = ingredients[2];
+ingredients.forEach(ingredient => {
+  const ingredientItem = document.createElement("li");
+  ingredientItem.classList.add("item");
+  ingredientItem.textContent = ingredient;
+  items.push(ingredientItem);
+});
 
-const fourthIngredientEl = document.createElement("li")
-fourthIngredientEl.textContent = ingredients[3];
-
-const fifthIngredientEl = document.createElement("li")
-fifthIngredientEl.textContent = ingredients[4];
-
-const sixthIngredientEl = document.createElement("li")
-sixthIngredientEl.textContent = ingredients[5];
-
-const ingredientsEl = document.querySelector("ul");
-ingredientsEl.append(
-  firstIngredientEl,
-  secondIngredientEl,
-  thirdIngredientEl,
-  fourthIngredientEl,
-  fifthIngredientEl,
-  sixthIngredientEl);
+ingredientsEl.append(...items);
 console.log(ingredientsEl);
