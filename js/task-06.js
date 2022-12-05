@@ -6,10 +6,13 @@ inputEl.addEventListener("blur", onBlurValid);
 
 function onBlurValid(event) {
     if (event.target.value.length === inputTextLength) {
-        inputEl.classList.remove("invalid");
-        inputEl.classList.add("valid");
+        updateClass("valid", "invalid");
     } else {
-        inputEl.classList.remove("valid");
-        inputEl.classList.add("invalid");
+        updateClass("invalid", "valid");
     }
+}
+
+function updateClass(add, rem) {
+  inputEl.classList.add(add);
+  inputEl.classList.remove(rem);
 }

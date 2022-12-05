@@ -5,7 +5,7 @@ const spanEl = document.querySelector("#name-output");
 inputEl.addEventListener("input", onInputChange);
 
 function onInputChange(event) { 
-    if (event.currentTarget.value !== "") {
+    if (event.currentTarget.value.trim() !== "") {
         spanEl.textContent = event.currentTarget.value;
     } else {
         spanEl.textContent = "Anonymous"

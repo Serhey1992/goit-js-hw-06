@@ -1,5 +1,5 @@
 const formEl = document.querySelector(".login-form");
-const formInformation = {};
+
 formEl.addEventListener("submit", onFormSubmit);
 
 function onFormSubmit(evt) {
@@ -8,12 +8,14 @@ function onFormSubmit(evt) {
         elements: { email, password }
     } = evt.currentTarget;
 
-    if (email.value === "" || password.value === "") {
+    if (email.value.trim() === "" || password.value.trim() === "") {
         return alert("Заповнені не усі поля!");
-    } else {
-        formInformation.email = `${email.value}`
-        formInformation.password = `${password.value}`
     }
+    const formInformation = {
+        email: email.value,
+        password: password.value,
+    };
+    
  console.log(formInformation);
   evt.currentTarget.reset();
 }
